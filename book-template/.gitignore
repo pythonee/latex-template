@@ -1,0 +1,11 @@
+
+*.toc
+*.synctex
+*.out
+*.lot
+*.log
+*.lof
+*.blg
+*.bbl
+*.aux
+*.bak

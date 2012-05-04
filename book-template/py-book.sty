@@ -5,7 +5,9 @@
 \usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue]{hyperref}
 \hypersetup{%
     bookmarksnumbered={true},
+    pdfstartview={FitH},
 }
+
 %有了这些可以使用非常爽的ams数学包和数学模式的粗字体
 \usepackage{amsmath}
 \usepackage{amsbsy}
@@ -56,7 +58,6 @@
 {\bfseries\thecontentslabel\\*[.2pc]\large}
 {\bfseries\large}{}[\addvspace{.5pc}]
 
-
 %用这个包可以定制页眉和页脚，并设定使用该包的页面风格
 \usepackage{fancyhdr}
 \usepackage{lastpage}
@@ -67,10 +68,6 @@
 \renewcommand{\footrulewidth}{0.4pt}
 
 %backmatter页码设置
-\renewcommand\backmatter{%
-   \cleardoublepage
- \@mainmatterfalse
- }
  \renewcommand\backmatter{%
   \if@openright
     \cleardoublepage
