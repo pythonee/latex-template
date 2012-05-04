@@ -13,7 +13,7 @@
 \usepackage{amsbsy}
 \usepackage[all,warning]{onlyamsmath}
 %使用多样式的参考文献包
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage{index}
 %每章都含参考文献
 \usepackage{chapterbib}
@@ -108,6 +108,38 @@
   \fi
   \null\vfil
   \secdef\@part\@spart}
+
+\renewenvironment{thebibliography}[1]
+{
+   \if@twoside
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+    \ifx\phantomsection\undefined \else\phantomsection \fi
+    \addcontentsline{toc}{chapter}{\bibname}
+    \thispagestyle{plain}%   % Original ?plain? replaced by ?emptyx
+
+    \chapter*{\bibname}%
+    \@mkboth{\bibname}{\bibname}%
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth
+        \advance\leftmargin\labelsep
+        %\advance\leftmargin by 2em%
+        %\itemindent -2em%
+        \@openbib@code
+        \usecounter{enumiv}%
+        \let\p@enumiv\@empty
+        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m}
+    {\def\@noitemerr
+        {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist}
 
 
 %封面页定义
