@@ -1,0 +1,58 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[fancyhdr,adobefonts,oneside,hyperref,openany,a4paper,UTF8]{ctexbook}
+\usepackage{py-book}
+\usepackage{lipsum}
+%---------------------------------------
+\author{Pythonee}
+\title{书籍标题}
+\date{2014-04-23}
+\homepage{py-note.appspot.com}
+\email{pythonee@gmail.com}
+\claimcopyright{随意使用\ 任意修改}
+%---------------------------------------
+
+\begin{document}
+\maketitle
+
+%---------------------------------------
+
+\frontmatter
+\tableofcontents
+\listoftables
+\listoffigures
+\setcounter{page}{0}
+\chapter{摘要}
+\lipsum[1]
+\chapter{序}
+\lipsum[1]
+
+%---------------------------------------
+
+\mainmatter
+\part{我爱\TeX}
+\chapter{简单介绍}
+\lipsum
+
+\chapter{发行版比较}
+\lipsum
+
+\part{我的 \LaTeX 模板}
+\chapter{主要特点}
+\lipsum
+
+\chapter{一些命令}
+\cpp \\
+\TeX \cite{knuth,lamport}
+%---------------------------------------
+
+\backmatter
+\chapter{后记}
+\lipsum[1]
+
+\appendix
+\bibliographystyle{plain}
+\bibliography{references}
+
+%---------------------------------------
+
+\end{document}  

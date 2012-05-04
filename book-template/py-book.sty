@@ -1,0 +1,149 @@
+%选用geometry包及设置符合要求的边界
+\usepackage{geometry}
+\geometry{top=2cm,bottom=2cm,left=2.5cm,right=2cm,centering}
+%生成中文的书签
+\usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{%
+    bookmarksnumbered={true},
+}
+%有了这些可以使用非常爽的ams数学包和数学模式的粗字体
+\usepackage{amsmath}
+\usepackage{amsbsy}
+\usepackage[all,warning]{onlyamsmath}
+%使用多样式的参考文献包
+\usepackage{natbib}
+\usepackage{index}
+%每章都含参考文献
+\usepackage{chapterbib}
+%选用字体设置英文字体系列
+%\usepackage{mathptmx}
+%支持图形插入功能
+\usepackage{graphicx}
+\usepackage{tikz}
+%支持代码和算法描述
+\usepackage{algorithm2e}
+\usepackage{listing}
+\usepackage{courier} %代码字体
+%科学计量单位
+\usepackage{siunitx}
+%颜色
+\usepackage{color}
+\usepackage{xcolor}
+%支持特别的表格
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{longtable}
+
+%建议使用的包
+\usepackage{microtype}
+\usepackage{nag}
+\usepackage{etoolbox}
+\usepackage{titletoc}
+\titlecontents{chapter}[0pt]{\vspace{.1\baselineskip}\bfseries}
+    {\thecontentslabel\hspace{2.8mm}}{}
+    {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\titlecontents{section}[1.75em]{\vspace{-0.10mm}}
+    {\thecontentslabel\hspace{4mm}}{}
+    {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[4.2em]{\vspace{-0.20mm}}
+    {\thecontentslabel\hspace{4mm}}{}
+    {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[7.3em]{\vspace{-0.20mm}}
+    {\thecontentslabel\hspace{4mm}}{}
+    {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\titlecontents{part}[0pt]{\addvspace{3pc}}
+{\bfseries\thecontentslabel\\*[.2pc]\large}
+{\bfseries\large}{}[\addvspace{.5pc}]
+
+
+%用这个包可以定制页眉和页脚，并设定使用该包的页面风格
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+ \fancyhead[R]{\small\leftmark}
+ \fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%backmatter页码设置
+\renewcommand\backmatter{%
+   \cleardoublepage
+ \@mainmatterfalse
+ }
+ \renewcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \@mainmatterfalse
+  \addtocontents{toc}{\protect\addvspace{3pc}}
+  \pagenumbering{roman}}
+
+%手工干预backmatter目录生成
+\appto\backmatter{\def\toclevel@chapter{-1}}
+
+%定义c++命令
+\def\cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+%目录页不要页码
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\addtocontents{lof}{\protect\thispagestyle{empty}}
+\addtocontents{lot}{\protect\thispagestyle{empty}}
+
+\def\CTEX@part@aftername{\par\vskip 40\p@}
+\def\CTEX@part@titleformat{\zihao{0}\bfseries}
+%part页不要页码，不要counter计数
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%   % Original ?plain? replaced by ?emptyx
+  \addtocounter{page}{-1}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+
+
+%封面页定义
+%---------------------------------------
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    \HRule \\[0.4cm]
+    {\Huge \bfseries \@title\par}%
+    \vfill
+    {\Large \bfseries \@author\par}%
+    \vskip 0.4cm
+    \begin{tabular}{rl}
+     {\bfseries site:}  & {\bfseries \href{http://\@homepage}{\@homepage}} \\
+     {\bfseries email:} & {\bfseries \href{mailto:\@email}{\@email}} \\
+    \end{tabular}
+    \vskip 4cm
+    {\bfseries \@claimcopyright\par}%
+    \vskip 0.2cm
+    {\bfseries \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+
+\def\location#1{\def\@location{#1}}
+\def\claimcopyright#1{\def\@claimcopyright{#1}}
+\def\email#1{\def\@email{#1}}
+\def\homepage#1{\def\@homepage{#1}}
+%---------------------------------------
