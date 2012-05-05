@@ -1,43 +1,44 @@
-%Ñ¡ÓÃgeometry°ü¼°ÉèÖÃ·ûºÏÒªÇóµÄ±ß½ç
+% !Mode:: "TeX:UTF-8"
+%é€‰ç”¨geometryåŒ…åŠè®¾ç½®ç¬¦åˆè¦æ±‚çš„è¾¹ç•Œ
 \usepackage{geometry}
 \geometry{top=2cm,bottom=2cm,left=2.5cm,right=2cm,centering}
-%Éú³ÉÖĞÎÄµÄÊéÇ©
+%ç”Ÿæˆä¸­æ–‡çš„ä¹¦ç­¾
 \usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue]{hyperref}
 \hypersetup{%
     bookmarksnumbered={true},
     pdfstartview={FitH},
 }
 
-%ÓĞÁËÕâĞ©¿ÉÒÔÊ¹ÓÃ·Ç³£Ë¬µÄamsÊıÑ§°üºÍÊıÑ§Ä£Ê½µÄ´Ö×ÖÌå
+%æœ‰äº†è¿™äº›å¯ä»¥ä½¿ç”¨éå¸¸çˆ½çš„amsæ•°å­¦åŒ…å’Œæ•°å­¦æ¨¡å¼çš„ç²—å­—ä½“
 \usepackage{amsmath}
 \usepackage{amsbsy}
 \usepackage[all,warning]{onlyamsmath}
-%Ê¹ÓÃ¶àÑùÊ½µÄ²Î¿¼ÎÄÏ×°ü
+%ä½¿ç”¨å¤šæ ·å¼çš„å‚è€ƒæ–‡çŒ®åŒ…
 %\usepackage{natbib}
 \usepackage{index}
-%Ã¿ÕÂ¶¼º¬²Î¿¼ÎÄÏ×
+%æ¯ç« éƒ½å«å‚è€ƒæ–‡çŒ®
 \usepackage{chapterbib}
-%Ñ¡ÓÃ×ÖÌåÉèÖÃÓ¢ÎÄ×ÖÌåÏµÁĞ
+%é€‰ç”¨å­—ä½“è®¾ç½®è‹±æ–‡å­—ä½“ç³»åˆ—
 %\usepackage{mathptmx}
-%Ö§³ÖÍ¼ĞÎ²åÈë¹¦ÄÜ
+%æ”¯æŒå›¾å½¢æ’å…¥åŠŸèƒ½
 \usepackage{graphicx}
 \usepackage{tikz}
-%Ö§³Ö´úÂëºÍËã·¨ÃèÊö
+%æ”¯æŒä»£ç å’Œç®—æ³•æè¿°
 \usepackage{algorithm2e}
 \usepackage{listing}
-\usepackage{courier} %´úÂë×ÖÌå
-%¿ÆÑ§¼ÆÁ¿µ¥Î»
+\usepackage{courier} %ä»£ç å­—ä½“
+%ç§‘å­¦è®¡é‡å•ä½
 \usepackage{siunitx}
-%ÑÕÉ«
+%é¢œè‰²
 \usepackage{color}
 \usepackage{xcolor}
-%Ö§³ÖÌØ±ğµÄ±í¸ñ
+%æ”¯æŒç‰¹åˆ«çš„è¡¨æ ¼
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{array}
 \usepackage{longtable}
 
-%½¨ÒéÊ¹ÓÃµÄ°ü
+%å»ºè®®ä½¿ç”¨çš„åŒ…
 \usepackage{microtype}
 \usepackage{nag}
 \usepackage{etoolbox}
@@ -58,16 +59,30 @@
 {\bfseries\thecontentslabel\\*[.2pc]\large}
 {\bfseries\large}{}[\addvspace{.5pc}]
 
-%ÓÃÕâ¸ö°ü¿ÉÒÔ¶¨ÖÆÒ³Ã¼ºÍÒ³½Å£¬²¢Éè¶¨Ê¹ÓÃ¸Ã°üµÄÒ³Ãæ·ç¸ñ
+%å®šåˆ¶é¡µçœ‰å’Œé¡µè„šï¼Œå¹¶è®¾å®šä½¿ç”¨è¯¥åŒ…çš„é¡µé¢é£æ ¼
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \pagestyle{fancy}
  \fancyhead[R]{\small\leftmark}
+ \fancyhead[L]{}
+ \fancyhead[C]{}
  \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-%backmatterÒ³ÂëÉèÖÃ
+\usepackage{chngcntr}
+\numberwithin{chapter}{part}
+\numberwithin{section}{chapter}
+
+\renewcommand{\thepart}{\arabic{part}}
+\renewcommand\chaptermark[1]{\markboth{\thechapter\quad#1}{}}
+%\renewcommand\sectionmark[1]{\markright{\thesection. #1}}
+
+%æ ‡é¢˜æ ¼å¼å®šåˆ¶
+\usepackage{titlesec}
+%\titleformat{\section}{\zihao{4}\bfseries\raggedright}{\S\thesection}{10pt}{}
+
+%backmatteré¡µç è®¾ç½®
  \renewcommand\backmatter{%
   \if@openright
     \cleardoublepage
@@ -78,20 +93,23 @@
   \addtocontents{toc}{\protect\addvspace{3pc}}
   \pagenumbering{roman}}
 
-%ÊÖ¹¤¸ÉÔ¤backmatterÄ¿Â¼Éú³É
+%æ‰‹å·¥å¹²é¢„backmatterç›®å½•ç”Ÿæˆ
 \appto\backmatter{\def\toclevel@chapter{-1}}
 
-%¶¨Òåc++ÃüÁî
+%å®šä¹‰c++å‘½ä»¤
 \def\cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
 
-%Ä¿Â¼Ò³²»ÒªÒ³Âë
+%ç›®å½•é¡µä¸è¦é¡µç 
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \addtocontents{lof}{\protect\thispagestyle{empty}}
 \addtocontents{lot}{\protect\thispagestyle{empty}}
 
+%partæ ‡é¢˜
 \def\CTEX@part@aftername{\par\vskip 40\p@}
 \def\CTEX@part@titleformat{\zihao{0}\bfseries}
-%partÒ³²»ÒªÒ³Âë£¬²»Òªcounter¼ÆÊı
+
+
+%parté¡µä¸è¦é¡µç ï¼Œä¸è¦counterè®¡æ•°
 \renewcommand\part{%
   \if@openright
     \cleardoublepage
@@ -109,6 +127,20 @@
   \null\vfil
   \secdef\@part\@spart}
 
+%æ›´å¥½çš„æ§åˆ¶æµ®åŠ¨å…ƒç´ 
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
+
+%ç½šç‚¹é˜ˆå€¼ï¼Œæ§åˆ¶é¡µé¦–å­¤è¡Œæˆ–é¡µå°¾å­¤è¡Œ
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+%æŠŠå‚è€ƒæ–‡çŒ®æ·»åŠ åˆ°ç›®å½•ä¸­
 \renewenvironment{thebibliography}[1]
 {
    \if@twoside
@@ -142,7 +174,7 @@
     \endlist}
 
 
-%·âÃæÒ³¶¨Òå
+%å°é¢é¡µå®šä¹‰
 %---------------------------------------
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
