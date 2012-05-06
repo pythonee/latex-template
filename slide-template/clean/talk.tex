@@ -1,16 +1,15 @@
 % !Mode:: "TeX:UTF-8"
 
-\documentclass[xcolor=dvipsnames,CJK,t,hyperref={bookmarks=false}]{beamer}
+\documentclass[xcolor=dvipsnames,CJK,hyperref={bookmarks=false}]{beamer}
 \usepackage{py-talk}
 
 \begin{document}
 \begin{CJK*}{UTF8}{hei}
-\title{演讲标题}
+\title{\Huge{演讲标题}}
 \subtitle{副标题}
 \author{主讲人：王飞}
 \date{\today}
 \institute{公司}
-
 \begin{frame}
 \titlepage
 \end{frame}
@@ -18,7 +17,7 @@
 \section*{今天主题大纲}
 \begin{frame}
 %\begin{multicols}{2}
-  \setcounter{tocdepth}{3}
+  \setcounter{tocdepth}{1}
   \tableofcontents
 %\end{multicols}
 \end{frame}
@@ -34,5 +33,78 @@
 \begin{frame}
 中文
 \end{frame}
+
+\begin{frame}[fragile]
+\begin{example}[Putting Verbatim]
+\begin{verbatim}
+\begin{document}
+
+\end{document}
+\end{verbatim}
+\end{example}
+\end{frame}
+
+\section{列举}
+\begin{frame}
+  \begin{block}{Ubuntu with TeX Live}
+    \begin{enumerate}
+      \item Place the {\tt <dirstruct>} in the root of your local latex directory tree. By default it is\\
+        {\tt \textasciitilde /texmf}\\
+        If the root does not exist, create it. The symbol {\tt \textasciitilde} refers to your home folder, i.e., {\tt /home/<username>}
+      \item In a terminal run\\
+        {\tt \$ texhash \textasciitilde /texmf}
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\section{块结构}
+
+\begin{frame}
+
+\begin{block}{title of the bloc}
+bloc text
+\end{block}
+
+\begin{exampleblock}{title of the bloc}
+bloc text
+\end{exampleblock}
+
+\begin{alertblock}{title of the bloc}
+bloc text
+\end{alertblock}
+\end{frame}
+
+\section{表格}
+\begin{frame}
+\begin{tabular}{c c c}
+A & B & C \\
+\pause
+1 & 2 & 3 \\
+\pause
+A & B & C \\
+\end{tabular}
+\end{frame}
+
+\section{插入图片}
+  \frame
+  {
+
+    A graphics file is included by using the {\bf figure} environment,
+    and inside of that the {\bf includegraphics} command.
+    \begin{figure}
+      \scalebox{0.50}
+      {
+        \includegraphics{pengbrew.png}
+      }
+    \end{figure}
+  }
+
+\section{定理}
+\begin{frame}
+\begin{theorem}
+The quick brown fox jumps over the lazy dog.
+\end{theorem}
+\end{frame}
+
 \end{CJK*}
 \end{document} 

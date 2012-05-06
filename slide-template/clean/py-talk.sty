@@ -1,20 +1,33 @@
+\usetheme{Madrid} % My favorite!
+
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsection}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsubsection\\}
 \setbeamertemplate{blocks}[rounded][shadow=true]
-%\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{titlelike}{parent=structure}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}{}
+
 \usepackage{CJK}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \usepackage{tikz}
+\usetikzlibrary{fadings}
 \usepackage{ifthen}
 \usepackage{bm}     %for bold math symbols
 \usepackage{xcolor} % color package; load before tocstyle
 \usepackage{multicol}
+\usepackage{textpos} % package for the positioning
 
 \definecolor{secinhead}{RGB}{249,196,95}
 \definecolor{shadowbg}{RGB}{51,51,51}
 
 \definecolor{mybgcolor}{rgb}{0.361,0.412,0.463}
+\definecolor{mylightblue}{rgb}{0.596,0.678,0.761}% for box (#98adc2)
+\definecolor{mydarkgray}{rgb}{0.282,0.322,0.361}% for box (#48525c)
 \setbeamercolor{secsubsec}{fg=mybgcolor,bg=mybgcolor}
 \setbeamercolor{shadow}{fg=secinhead,bg=shadowbg}
 
@@ -22,12 +35,13 @@
 {
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=9.25ex,dp=5.5ex]{secsubsec}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=9.25ex,dp=5.5ex,xshift=2cm]{secsubsec}%
     \raggedright
     \hspace*{2em}%
     {\sffamily\Large\color{white}
-    \ifthenelse{\thesection > 0}{\thesection.~\insertsection\hfill\insertsubsection}{}}
+    \ifthenelse{\thesection > 0}{\thesection.~\insertsection\hfill\insertsubsection}{\insertsection\hfill\insertsubsection}}
     \hspace*{2em}%
+    \ifthenelse{\thesection = 0}{\raisebox{-4.5ex}{\includegraphics[height=3cm,width=2cm,keepaspectratio]{dcu-logo}}\hspace*{1em}}{}
   \end{beamercolorbox}%
   }\vskip0pt%
   \hbox{%
@@ -49,5 +63,3 @@
   \end{beamercolorbox}%
   }
 }
-
-%\setbeamertemplate{frametitle}{}
