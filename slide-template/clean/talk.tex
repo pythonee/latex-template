@@ -1,0 +1,38 @@
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[xcolor=dvipsnames,CJK,t,hyperref={bookmarks=false}]{beamer}
+\usepackage{py-talk}
+
+\begin{document}
+\begin{CJK*}{UTF8}{hei}
+\title{演讲标题}
+\subtitle{副标题}
+\author{主讲人：王飞}
+\date{\today}
+\institute{公司}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section*{今天主题大纲}
+\begin{frame}
+%\begin{multicols}{2}
+  \setcounter{tocdepth}{3}
+  \tableofcontents
+%\end{multicols}
+\end{frame}
+\section{第一个主题}
+\subsection{第一个小主题}
+\begin{frame}
+中文
+\end{frame}
+\subsection{第二个小主题}
+\begin{frame}Test\end{frame}
+
+\section{第二个主题}
+\begin{frame}
+中文
+\end{frame}
+\end{CJK*}
+\end{document} 

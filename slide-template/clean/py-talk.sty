@@ -1,0 +1,53 @@
+\setbeamertemplate{blocks}[rounded][shadow=true]
+%\setbeamertemplate{navigation symbols}{}
+\usepackage{CJK}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{bm}     %for bold math symbols
+\usepackage{xcolor} % color package; load before tocstyle
+\usepackage{multicol}
+
+\definecolor{secinhead}{RGB}{249,196,95}
+\definecolor{shadowbg}{RGB}{51,51,51}
+
+\definecolor{mybgcolor}{rgb}{0.361,0.412,0.463}
+\setbeamercolor{secsubsec}{fg=mybgcolor,bg=mybgcolor}
+\setbeamercolor{shadow}{fg=secinhead,bg=shadowbg}
+
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=9.25ex,dp=5.5ex]{secsubsec}%
+    \raggedright
+    \hspace*{2em}%
+    {\sffamily\Large\color{white}
+    \ifthenelse{\thesection > 0}{\thesection.~\insertsection\hfill\insertsubsection}{}}
+    \hspace*{2em}%
+  \end{beamercolorbox}%
+  }\vskip0pt%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=1ex]{shadow}%
+  \mbox{}
+  \end{beamercolorbox}
+  }%
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=6.12ex,dp=3ex]{secsubsec}%
+    \raggedright
+    \hspace*{2em}%
+    {\sffamily\small\color{white}\insertshortauthor\hfill\thepage}%
+    \hspace*{2em}%
+  \end{beamercolorbox}%
+  }
+}
+
+%\setbeamertemplate{frametitle}{}
