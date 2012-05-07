@@ -1,0 +1,49 @@
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+
+\tolerance=1000
+\usepackage{color}
+\usepackage{listings}
+\definecolor{UTMRed}{RGB}{112,12,41}
+
+\usepackage{xltxtra,fontenc,xunicode}
+\usepackage[slantfont,boldfont]{xeCJK} % ????б???ʹ???
+
+\setCJKmainfont{Adobe Song Std L}   % ????ȱʡ???????? adobe ????
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{SimSun}             % ???õȿ?????
+\setmainfont{DejaVu Serif}          % ???ĳ???????
+\setsansfont{DejaVu Sans}           % ?????޳???????
+\setmonofont{Monaco}                % Ӣ?ĵȿ?????
+
+\renewcommand*\familydefault{\sfdefault}
+\renewcommand\CJKfamilydefault{sf}
+
+\usepackage{multirow}
+\usepackage{tikz}
+
+\usetikzlibrary{calc}
+
+\usetheme{Madrid} % My favorite!
+% Vary the color applet  (try out your own if you like)
+\colorlet{structure}{red!65!black}
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsection}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsubsection\\}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\beamertemplateshadingbackground{yellow!100}{white}
+\setbeamerfont*{title}{size=\Huge}
+\setbeamercolor{titlelike}{parent=structure}
+\usepackage{beamerthemesplit}
+
+\renewcommand{\alert}[1]{\textcolor{yellow}{#1}}
+\providecommand{\alert}[1]{\textbf{#1}}
