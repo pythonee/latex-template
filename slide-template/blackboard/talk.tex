@@ -1,0 +1,79 @@
+% !Mode:: "TeX:UTF-8"
+% Created 2011-07-27 Wed 14:42
+
+\documentclass[hyperref={bookmarks=false},CJK]{beamer}
+\usepackage{py-talk}
+
+\AtBeginSection[]{\begin{frame}<beamer>\tableofcontents[currentsection]\end{frame}}
+
+\title{演讲标题}
+\author{pythonee}
+\date{2011年6月21日}
+
+\institute{系统架构部}
+\title[\href{mailto:pythonee@gmail.coim}{pythonee@gmail.com}\hspace{3cm}\insertframenumber/\inserttotalframenumber]{演讲标题}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+  \frametitle{今天主题}
+  \setcounter{tocdepth}{3}
+  \tableofcontents
+\end{frame}
+
+\section{简介}
+\label{sec-1}
+\begin{frame}
+  \frametitle{列表环境}
+  \label{sec-1-1}
+  \begin{block}{第一块}
+    \label{sec-1-1-1}
+
+    \begin{itemize}
+      \item 第一条
+      \item 第二条
+    \end{itemize}
+  \end{block}
+  \begin{block}{第二块}
+    \label{sec-1-1-2}
+
+    \begin{itemize}
+      \item 中文和打字机字体\texttt{franklin}
+      \item 我从哪里来
+      \item 要到哪里去
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{另一个主题}
+\begin{frame}
+  \frametitle{多列环境}
+  \label{sec-1-2}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{用块包住}
+        \label{sec-1-2-1}
+
+        \begin{itemize}
+          \item Low Mass X-ray Binaries
+          \item Accretion of H and/or He
+          \item Ignition at base of accreted layer
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      %% Artists Conception
+      \label{sec-1-2-2}
+      \color{yellow}
+      \begin{eqnarray*}
+        E &\sim& 10^{39} \text{ergs}\\
+        \tau_\text{rise} &\sim& 1 \text{ s} \\
+        \tau_\text{dur.} &\sim& 10\text{--}100\text{ s} \\
+        \tau_\text{recur.} &\sim& \text{hours to days}
+      \end{eqnarray*}
+    \end{column}
+  \end{columns}
+\end{frame}
+\end{document}
