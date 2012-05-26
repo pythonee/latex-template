@@ -1,13 +1,15 @@
 % !Mode:: "TeX:UTF-8"
 %选用geometry包及设置符合要求的边界
 \usepackage{geometry}
+\usepackage{makeidx}
 \geometry{top=2cm,bottom=2cm,left=2.5cm,right=2cm,centering}
 %生成中文的书签
-\usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue,backref=page]{hyperref}
 \hypersetup{%
     bookmarksnumbered={true},
     pdfstartview={FitH},
 }
+\def\backref#1{{\scriptsize [#1]}}
 
 %有了这些可以使用非常爽的ams数学包和数学模式的粗字体
 \usepackage{amsmath}
@@ -208,3 +210,6 @@
 \def\email#1{\def\@email{#1}}
 \def\homepage#1{\def\@homepage{#1}}
 %---------------------------------------
+\def\theaipage{\string\hyperpage{\thepage}}
+%---------------------------------------
+

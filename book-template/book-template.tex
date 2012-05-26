@@ -10,7 +10,7 @@
 \email{pythonee@gmail.com}
 \claimcopyright{随意使用\ 任意修改}
 %---------------------------------------
-
+\makeindex
 \begin{document}
 \maketitle
 
@@ -48,6 +48,9 @@
 \TeX \cite{knuth,lamport}
 %---------------------------------------
 
+Hello \index{world} world
+
+
 \backmatter
 \chapter{跋}
 \lipsum[1]
@@ -55,6 +58,8 @@
 \appendix
 \bibliographystyle{plain}
 \bibliography{references}
+
+\printindex
 
 %---------------------------------------
 
