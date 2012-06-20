@@ -1,0 +1,111 @@
+%# -*- coding:utf-8 -*-
+\documentclass{letter}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{lipsum}
+\usepackage{hyperref} % for pdf bookmarks
+\usepackage{wasysym}
+\usepackage{calc}
+\usepackage[letterpaper]{geometry}
+\usepackage{fontspec,xunicode}
+\usepackage[slantfont,boldfont]{xeCJK}
+\usepackage{microtype}
+\setCJKmainfont{Adobe Song Std L}
+%\setmainfont{Tahoma}
+\setmainfont{Minion Pro}
+\setsansfont{Myriad Pro}
+\newlength{\heightoflogo}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\parbox{11cm}{\includegraphics[height=50pt]{dcu-logo}}}
+\lfoot{}
+\cfoot{}
+\rhead{\raisebox{\height-28pt}{\footnotesize \today}}
+\rfoot{\parbox{\textwidth}{\raggedleft \footnotesize 
+广东省深圳市科技园xx大厦 \\ 电话:(000)-0000-0000 \hspace{4pt} 传真:(000)-0000-0000}}
+\setlength{\headheight}{74pt}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\footrulewidth}{0.1pt}
+
+
+\hyphenpenalty=1000
+\hypersetup{%
+    bookmarks=false,
+	%bookmarksnumbered = true,
+	pdftitle={},
+	pdfauthor={Tony Saad},
+	pdfsubject={},
+	pdfkeywords={},
+	pdfpagelayout=SinglePage,
+    bookmarksopen=false,
+	%pdfview=FitH,
+	pdfborder=0 0 0, 		% make all links invisible, so the pdf looks good when printed	
+    pdffitwindow=true,      % window fit to page when opened
+    %pdfstartview={FitV},    % fits the width of the page to the window
+    pdfcreator={Tony Saad},   % creator of the document
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=blue,         % color of internal links
+    citecolor=magenta,      % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\renewcommand{\ccname}{抄送}
+\makeatletter
+\renewcommand{\closing}[1]{\par\nobreak\vspace{\parskip}%
+  \stopbreaks
+  \noindent
+  %\ifx\@empty\fromaddress\else
+  %\hspace*{\longindentation}\fi
+  %\hspace*{\longindentation}
+  \hfill
+  \parbox{\indentedwidth}{\raggedleft
+       \ignorespaces #1\\[6\medskipamount]%
+       \ifx\@empty\fromsig
+           \fromname
+       \else \fromsig \fi\strut}%
+   \par}
+\makeatother
+\makeatletter
+\renewcommand*{\cc}[1]{%
+  \noindent
+  \parbox[t]{\textwidth}{%
+    \hfill \@hangfrom{\normalfont\ccname: }%
+    \ignorespaces #1\strut}\par}
+\makeatother
+
+\large
+\signature{
+            \large
+            我的名字 \\
+            我的头衔\\
+            pythonee@gmail.com \\
+            (0898)-0000-0000
+}
+
+%\address{University of Utah \\ 201 President's Circle \\ Salt Lake City, UT 84112, USA}
+\date{}
+\begin{document}
+
+    \begin{letter} {
+            收件人 \\
+            收件人头衔\\
+            街道地址 \\
+            省市地址
+    }
+        \large
+        \opening{开头语:}
+        \thispagestyle{fancy}
+        
+        \lipsum[20]
+        
+        \vspace{3\parskip}
+        \closing{结束语}
+        \begin{minipage}{\textwidth}
+            \begin{flushright}
+                \hfill \cc{抄送人}
+            \end{flushright}
+        \end{minipage}
+    \end{letter}
+\end{document} 

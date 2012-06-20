@@ -1,0 +1,84 @@
+\documentclass[10pt,stdletter]{newlfm}
+\usepackage{charter}
+
+\widowpenalty=1000
+\clubpenalty=1000
+
+\newsavebox{\Luiuc}
+\sbox{\Luiuc}{%
+	\parbox[b]{1.75in}{%
+		\vspace{0.5in}%
+		\includegraphics[scale=1.0,ext=.eps]
+		{figures/UILogoLG3L}%
+	}%
+}%
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{headermarginskip=20pt}
+\newlfmP{sigsize=50pt}
+\newlfmP{dateskipafter=20pt}
+\newlfmP{addrfromphone}
+\newlfmP{addrfromemail}
+\PhrPhone{Phone}
+\PhrEmail{Email}
+
+\lthUiuc
+
+\namefrom{Matthew J.\ Miller}
+\addrfrom{%
+	439 Coordinated Science Laboratory\\
+	1308 West Main Street\\
+	Urbana, IL 61801
+}
+\phonefrom{217-244-6024}
+\emailfrom{mjmille2@uiuc.edu}
+
+\addrto{%
+Faculty Search Committee\\
+Department of Computer Science\\
+Clemson University\\
+Clemson, SC 29634-0974}
+
+\greetto{To Whom It May Concern,}
+\closeline{Sincerely,}
+\begin{document}
+\begin{newlfm}
+
+I am writing to apply for the position of assistant
+professor in Clemson University's Computer Science Department.  I plan to receive my
+Ph.D.\ degree from the University of Illinois at
+Urbana-Champaign in Summer of 2006.  My adviser is
+Prof.\ Nitin H.\ Vaidya, and my general areas of interest
+include wireless and sensor network performance and security.
+ Having many friends and family in the area, I would be
+most enthused to return to the South permanently by accepting
+a position at your institution.
+
+In my graduate work, I focus on the design of
+energy-efficient protocols and secure key distribution.
+More specifically, I have explored various techniques at
+multiple layers of the network stack to effectively reduce
+the energy consumption of wireless communication.  In security,
+my work was the first to propose leveraging channel diversity
+for sensor network key distribution.  My research appears in 
+the \textit{IEEE Transactions on Mobile Computing} journal as
+well as \textit{Infocom 2006} and \textit{ICDCS 2005},
+prestigious conferences in the areas of networking and distributed
+systems, respectively.
+
+Enclosed is my curriculum vitae (including a list of
+publications), contact information for my references, a research
+statement, and a teaching statement.  All of my publications and
+presentations are available at:
+
+http://www.crhc.uiuc.edu/$\sim$mjmille2/publications/
+
+Please let me know if there are any other materials
+or information that will assist you in processing my application.
+
+Thank you for your consideration.  I look forward to
+hearing from you.
+
+\end{newlfm}
+\end{document}
+
