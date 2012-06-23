@@ -24,6 +24,9 @@
 %\usepackage{mathptmx}
 %支持图形插入功能
 \usepackage{graphicx}
+\usepackage{subfigure}
+% 提供边注标题
+\usepackage{sidecap}
 \usepackage{tikz}
 %支持代码和算法描述
 \usepackage{algorithm2e}
@@ -37,6 +40,7 @@
 %支持特别的表格
 \usepackage{multirow}
 \usepackage{multicol}
+\usepackage{slashbox}
 \usepackage{array}
 \usepackage{longtable}
 
@@ -61,6 +65,7 @@
 {\bfseries\thecontentslabel\\*[.2pc]\large}
 {\bfseries\large}{}[\addvspace{.5pc}]
 
+
 %定制页眉和页脚，并设定使用该包的页面风格
 \usepackage{fancyhdr}
 \usepackage{lastpage}
@@ -78,6 +83,22 @@
 
 \renewcommand{\thepart}{\arabic{part}}
 \renewcommand\chaptermark[1]{\markboth{\thechapter\quad#1}{}}
+\renewcommand{\thefigure}{%
+    \ifnum \c@section>\z@
+        \thesection-%
+    \else
+        \ifnum \c@chapter>\z@
+            \thechapter-%
+        \fi
+    \fi\@arabic\c@figure}
+\renewcommand{\thetable}{%
+    \ifnum \c@section>\z@
+        \thesection-%
+    \else
+        \ifnum \c@chapter>\z@
+            \thechapter-%
+        \fi
+    \fi\@arabic\c@table}
 %\renewcommand\sectionmark[1]{\markright{\thesection. #1}}
 
 %标题格式定制

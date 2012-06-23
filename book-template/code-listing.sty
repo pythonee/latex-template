@@ -1,0 +1,119 @@
+% !Mode:: "TeX:UTF-8"
+
+\ProvidesPackage{code-listing}[2012/06/22 test listings]
+\RequirePackage{xeCJK}
+
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{caption}
+\usepackage{showexpl}
+\usepackage{calc}
+\usepackage{framed}
+
+\renewcommand{\lstlistlistingname}{代码}
+\renewcommand{\lstlistingname}{代码}
+
+\usepackage{xcolor} % 颜色增强
+\definecolor{lightgrey}{HTML}{D0CFCF}% 亮灰色
+\definecolor{lightblue}{HTML}{D5EDF1}% 亮蓝色
+\definecolor{greyblue}{HTML}{0A499B}% 灰蓝色
+\definecolor{greygreen}{HTML}{19400B}% 灰绿色
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newlength\tdima
+\newlength\tdimb
+\setlength\tdima{ \fboxsep+\fboxrule}
+\setlength\tdimb{-\fboxsep-\fboxrule}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\parbox{\textwidth}{\colorbox{gray}{#1#2#3}\vskip 6pt}}
+\captionsetup[bookCaption]{%
+format=listing,
+labelfont=white,
+textfont=white,
+singlelinecheck=false,
+margin=0pt,
+font={bf,footnotesize}
+}
+
+\captionsetup[originalCaption]{font={bf,footnotesize}}
+
+
+\lstset{%
+         basicstyle=\small\tt,
+         xleftmargin=\tdima,
+         xrightmargin = \tdima,
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         mathescape,
+         escapeinside={\%*}{*)},        % if you want to add a comment within your code
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
+         columns=flexible,
+         framextopmargin= 10pt,
+         framexbottommargin=10pt,
+         width=\textwidth-\fboxsep-\fboxrule,
+         keywordstyle=\color{greyblue},      % keyword style
+         commentstyle=\color{greygreen},  % comment style
+         stringstyle=\color{mauve}\ttfamily, % Farbe der String
+         float=tp                            % float setting
+}
+
+\lstdefinestyle{proBookStyle}{%
+         keywordstyle=\color{greyblue},      % keyword style
+         commentstyle=\color{greygreen},  % comment style
+         stringstyle=\color{mauve}\ttfamily, % Farbe der String
+         frame=single,
+         rulecolor= \color{gray},
+         backgroundcolor=\color{white}
+}
+
+\lstdefinestyle{redRYellowBStyle}{%
+    rulecolor=\color{red},
+    keywordstyle=\color{blue}\sf,
+    identifierstyle=\color{magenta},
+    commentstyle=\color{cyan},
+    backgroundcolor=\color{yellow!10}
+}
+
+\lstdefinestyle{exampleStyle}{%
+    language=TeX,
+    basicstyle=\small\ttfamily,
+    backgroundcolor=\color{yellow},
+    numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt,
+    commentstyle=\color{red},
+    showstringspaces=false,
+    keywordstyle=\color{blue}\bfseries,
+    morekeywords={align,begin},
+    pos=l
+}
+
+\lstdefinestyle{cleanStyle}{%
+     keywordstyle=\color{greyblue},      % keyword style
+     commentstyle=\color{greygreen},  % comment style
+     stringstyle=\color{mauve}\ttfamily, % Farbe der String
+     identifierstyle=\color{magenta},
+     rulecolor= \color{gray},
+}
+
+\lstnewenvironment{withBookCaptionBlock}[1][]{%
+    \lstset{%
+        #1,
+    }
+    \captionsetup{options=bookCaption}
+}{}
+
+\lstnewenvironment{originalCaptionBlock}[1][]{%
+    \lstset{%
+        #1,
+    }
+    \captionsetup{options=originalCaption}
+}{}
+
+
+
