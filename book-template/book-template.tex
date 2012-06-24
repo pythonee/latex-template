@@ -46,7 +46,7 @@
 \begin{figure}[htp]
   \centering
     \includegraphics[scale=0.25]{img/tiger}
-    \caption{每章首页是粗体}
+    \caption{基本插入技巧}
     \label{fig:tiger}
 \end{figure}
 
@@ -65,13 +65,6 @@
     {img/throughput}% picture filename
   \caption{ 边注标题 }
 \end{SCfigure}
-
-\begin{figure}[htp]
-  \centering
-    \includegraphics[scale=0.25]{img/tiger}
-    \caption{非章节首页正常}
-    \label{fig:tiger}
-\end{figure}
 
 \begin{figure}[htp]
     \centering
@@ -95,6 +88,22 @@
     \label{fig:sample_subfigures}
 \end{figure}
 
+
+It happens that you'll generate figures with too much (or too little) white space on the top or bottom. In such a case, you can simply make use of the optional argument [lineheight]. It specifies the height of the figure in number of lines of text. Also remember that the environment center adds some extra white space at its top and bottom;
+
+It happens that you'll generate figures with too much (or too little) white space on the top or bottom. In such a case, you can simply make use of the optional argument [lineheight]. It specifies the height of the figure in number of lines of text. Also remember that the environment center adds some extra white space at its top and bottom;
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{img/gull}
+  \end{center}
+  \vspace{-20pt}
+  \caption{图片环绕}
+  \vspace{-10pt}
+\end{wrapfigure}
+It happens that you'll generate figures with too much (or too little) white space on the top or bottom. In such a case, you can simply make use of the optional argument [lineheight]. It specifies the height of the figure in number of lines of text. Also remember that the environment center adds some extra white space at its top and bottom;
+It happens that you'll generate figures with too much (or too little) white space on the top or bottom. In such a case, you can simply make use of the optional argument [lineheight]. It specifies the height of the figure in number of lines of text. Also remember that the environment center adds some extra white space at its top and bottom;
 
 \chapter{插入表格}
 \section{常见表格}
