@@ -4,7 +4,7 @@
 \usepackage{makeidx}
 \geometry{top=2cm,bottom=2cm,left=2.5cm,right=2cm,centering}
 %生成中文的书签
-\usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue,backref=page]{hyperref}
+\usepackage[xetex,CJKbookmarks,linkcolor=blue,citecolor=blue,backref=page,hyperindex=true]{hyperref}
 \hypersetup{%
     bookmarksnumbered={true},
     pdfstartview={FitH},
@@ -31,7 +31,8 @@
 \sidecaptionvpos{figure}{c}
 \usepackage{tikz}
 %支持代码和算法描述
-\usepackage{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{listing}
 \usepackage{courier} %代码字体
 %科学计量单位
@@ -91,6 +92,12 @@
 \usepackage{chngcntr}
 \numberwithin{chapter}{part}
 \numberwithin{section}{chapter}
+
+\numberwithin{figure}{chapter}
+\numberwithin{figure}{section}
+
+\numberwithin{table}{chapter}
+\numberwithin{table}{section}
 
 \renewcommand{\thepart}{\arabic{part}}
 \renewcommand\chaptermark[1]{\markboth{\thechapter\quad#1}{}}

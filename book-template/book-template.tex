@@ -2,6 +2,8 @@
 \documentclass[fancyhdr,adobefonts,oneside,hyperref,openany,a4paper,UTF8]{ctexbook}
 \usepackage{py-book}
 \usepackage{code-listing}
+\usepackage{theorem}
+\usepackage{highlight}
 \usepackage{lipsum}
 \usepackage{calc}
 
@@ -41,7 +43,6 @@
 
 \part{我的 \LaTeX 模板}
 \chapter{插入图片}
-\section{基本插入技巧}
 
 \begin{figure}[htp]
   \centering
@@ -49,6 +50,9 @@
     \caption{基本插入技巧}
     \label{fig:tiger}
 \end{figure}
+
+\section{基本插入技巧}
+
 
 \begin{figure}[htp]
   \centering
@@ -58,13 +62,6 @@
     \caption{多图片并排}
     \label{fig:tiger}
 \end{figure}
-
-\begin{SCfigure}
-  \centering
-  \includegraphics[width=0.6\textwidth]%
-    {img/throughput}% picture filename
-  \caption{ 边注标题 }
-\end{SCfigure}
 
 \begin{figure}[htp]
     \centering
@@ -84,9 +81,19 @@
         \includegraphics[width=1.0in,height=2cm]{img/mouse}
         \label{fig:third_sub}
     }
-    \caption{Common figure caption.}
+    \caption{subfigure的使用}
     \label{fig:sample_subfigures}
 \end{figure}
+
+\section{测试计数器}
+
+\begin{SCfigure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/throughput}
+  \caption{ 边注标题}
+\end{SCfigure}
+
+
 
 
 It happens that you'll generate figures with too much (or too little) white space on the top or bottom. In such a case, you can simply make use of the optional argument [lineheight]. It specifies the height of the figure in number of lines of text. Also remember that the environment center adds some extra white space at its top and bottom;
@@ -154,9 +161,11 @@ Forward & FW & Jamie McMaster \\
 \end{tabular}
 \end{table}
 
+\section{复杂表格}
+
 \begin{table}[htp]
    \begin{center}
-   \caption{\label{tab:complicate}复杂表格}
+   \caption{\label{tab:complicate}合并多行多列}
 \begin{tabular}{l l l l l l l l }
 
 \hline
@@ -236,18 +245,55 @@ Hello World!
   \end{document}
 \end{LTXexample}
 
-
 \begin{framed}
 \lstinputlisting[label=samplecode,caption=导入python代码,language=python]{code/clear_tex.py}
 \end{framed}
 
+\begin{algorithm}
+\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+   \State $r\gets a\bmod b$
+   \While{$r\not=0$}\Comment{We have the answer if r is 0}
+      \State $a\gets b$
+      \State $b\gets r$
+      \State $r\gets a\bmod b$
+   \EndWhile\label{euclidendwhile}
+   \State \textbf{return} $b$\Comment{The gcd is b}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
 \chapter{一些命令}
-\cpp \\
+\section{非常实用的一些自定义命令}
+\cpp
+
 \TeX \cite{knuth,lamport}
+
+\begin{itemize}
+\item this is \tikzhighlight[yellow]{a text to be highlighted}
+\item {\tiny{this is a text to be \tikzhighlight{highlighted}}}
+\item \huge{this is a text to be \tikzhighlight{highlighted}}
+\end{itemize}
+
+\begin{align*}
+&\tikzhighlight[green]{\ensuremath{x+\dfrac{z}{y}}}=100\\
+&x+\tikzhighlight[blue]{\ensuremath{y}}=100
+\end{align*}
+
+\section{插入定理}
+\begin{theorem}[均值不等式]
+设$A,B$是两个实数, 则$2AB\leq A^2+B^2$.
+\end{theorem}
+
+\begin{definition}[均值不等式]
+设$A,B$是两个实数, 则$2AB\leq A^2+B^2$.
+\end{definition}
 
 %---------------------------------------
 
-Hello \index{world} world
+Hello 索引 \index{world} world 这个单词
 
 
 \backmatter
