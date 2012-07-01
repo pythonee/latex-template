@@ -81,6 +81,12 @@ font={bf,footnotesize}
     backgroundcolor=\color{yellow!10}
 }
 
+\lstdefinestyle{SQL}{
+    language={SQL},
+    moredelim=**[is][\btHLSQL]{`}{`},
+    moredelim=**[is][{\btHLSQL[fill=green!30,draw=red,dashed,thin]}]{@}{@},
+}
+
 \lstdefinestyle{exampleStyle}{%
     language=TeX,
     basicstyle=\small\ttfamily,
@@ -114,6 +120,3 @@ font={bf,footnotesize}
     }
     \captionsetup{options=originalCaption}
 }{}
-
-
-

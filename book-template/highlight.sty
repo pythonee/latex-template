@@ -14,12 +14,30 @@
   \tikz[#1]{%
     \pgfpathrectangle{\pgfpoint{0pt}{0pt}}{\pgfpoint{\wd #2}{\ht #2}}%
     \pgfusepath{use as bounding box}%
-    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=0.2em, inner ysep=0.1em,  
+    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=0.2em, inner ysep=0.1em,
     #1]{\usebox{#2}};
   }%
 }
 
-
 \newcommand{\tikzhighlight}[2][red]{%
   {\btHL[fill=#1!10,draw=#1,rounded corners]#2}%
+}
+
+\newenvironment{btHighlightSQL}[1][]
+{\begingroup\tikzset{bt@Highlight@par/.style={#1}}\begin{lrbox}{\@tempboxa}}
+{\end{lrbox}\bt@HL@sqlbox[bt@Highlight@par]{\@tempboxa}\endgroup}
+
+\newcommand\btHLSQL[1][]{%
+  \begin{btHighlightSQL}[#1]\bgroup\aftergroup\bt@HLSQL@endenv%
+}
+\def\bt@HLSQL@endenv{%
+  \end{btHighlightSQL}%
+  \egroup
+}
+\newcommand{\bt@HL@sqlbox}[2][]{%
+  \tikz[#1]{%
+    \pgfpathrectangle{\pgfpoint{1pt}{0pt}}{\pgfpoint{\wd #2}{\ht #2}}%
+    \pgfusepath{use as bounding box}%
+    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=1pt, inner ysep=0pt, rounded corners=3pt, minimum height=\ht\strutbox+1pt,#1]{\raisebox{1pt}{\strut}\strut\usebox{#2}};
+  }%
 }
