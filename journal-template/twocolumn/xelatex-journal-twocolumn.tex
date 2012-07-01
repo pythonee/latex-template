@@ -1,6 +1,9 @@
 % !Mode:: "TeX:UTF-8"
-\documentclass[onecolumn,a4paper,10pt,adobefonts]{ctexart}
+\documentclass{ctexart}
+
 \usepackage{journal}
+\usepackage{multicol}
+\usepackage{lipsum}
 
 \begin{document}
 
@@ -52,6 +55,7 @@ We describe the basic model checking algorithm and show how it can be used with 
 \end{center}
 \end{comment}
 
+\begin{multicols*}{2}
 \section{引言}
 
 \begin{theorem}[均值不等式]
@@ -69,7 +73,6 @@ We describe the basic model checking algorithm and show how it can be used with 
 用户资源量限制和内存限制
 
 \section{相关工作}
-
 \begin{algorithm}
 \caption{Euclid’s algorithm}\label{euclid}
 \begin{algorithmic}[1]
@@ -95,4 +98,6 @@ We describe the basic model checking algorithm and show how it can be used with 
 \bibliographystyle{plain}
 \bibliography{references}
 
-\end{document}
+\end{multicols*}
+
+\end{document} 

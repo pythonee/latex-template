@@ -1,0 +1,254 @@
+%# -*- coding:utf-8 -*-
+% !Mode:: "TeX:UTF-8"
+
+\documentclass[10pt,landscape]{ctexart}
+
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{xcolor,graphicx,overpic}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+\usepackage{fontspec,xunicode}
+\usepackage[pdfstartview=FitH,
+            bookmarks=false,
+            unicode=true,
+            pdfencoding = unicode,
+            pdfauthor = {pythonee},
+            pdfcreator= LaTeX,
+            pdfstartview = FitH,
+            pdfsubject = Singapore memo,
+            pdftitle = Road to Singapore]{hyperref}
+
+\usepackage[landscape]{geometry}
+\usepackage{microtype}
+
+\usepackage{wasysym,pifont}
+
+\setmainfont{Tahoma}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std L}
+%\defaultfontfeatures{Mapping=tex-text}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+%\hypersetup{
+%bookmarks = true,
+%bookmarksopen = false,
+%CJKbookmarks = true,
+%unicode = true,
+%pdfencoding = unicode,
+%pdfcreator = \LaTeX,
+%pdfauthor = {pythonee},
+%pdfstartview = FitH,
+%pdfsubject = Singapore memo,
+%pdftitle = Road to Singapore,
+%}
+
+% To make this come out properly in landscape mode, do one of the following
+% 1.
+%  pdflatex latexsheet.tex
+%
+% 2.
+%  latex latexsheet.tex
+%  dvips -P pdf  -t landscape latexsheet.dvi
+%  ps2pdf latexsheet.ps
+
+
+% If you're reading this, be prepared for confusion.  Making this was
+% a learning experience for me, and it shows.  Much of the placement
+% was hacked in; if you make it better, let me know...
+
+
+% 2008-04
+% Changed page margin code to use the geometry package. Also added code for
+% conditional page margins, depending on paper size. Thanks to Uwe Ziegenhagen
+% for the suggestions.
+
+% 2006-08
+% Made changes based on suggestions from Gene Cooperman. <gene at ccs.neu.edu>
+
+
+% To Do:
+% \listoffigures \listoftables
+% \setcounter{secnumdepth}{0}
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+\newcommand*\circled[1]{
+  \raisebox{.5pt}{\textcircled{\raisebox{-.9pt} {#1}}}
+}
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols*}{4}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+\setlength\columnseprule{.4pt}
+
+\begin{center}
+     \Large{\textbf{新加坡之旅备忘}} \\
+\end{center}
+
+\section{行李篇}
+\subsection{旅行证件}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{2pt}}Xr}
+  \circled{1} & 护照原件1张(复印件3张) & \Square \\
+  \circled{2} & 身份证原件1张(复印件3张) & \Square \\
+  \circled{3} & 机票PDF打印3份 & \Square \\
+  \circled{4} & 行程表打印2份  & \Square \\
+  \circled{5} & 酒店预订单打印2份(2家) & \Square \\
+  \circled{6} & 地图一张，出入境打印单1份& \Square \\
+  \circled{7} & 农行银联卡1张 & \Square \\
+  \circled{8} & 华夏银行卡1张 & \Square \\
+  \circled{9} & 招行visa信用卡1张 & \Square \\
+  \circled{10} & 泰铢2500铢, 人民币4000元 & \Square \\
+  \circled{11} & 笔2支, A4纸2张 & \Square \\
+  \circled{12} & 2寸照片4张,出国英语1份& \Square \\
+  \circled{13} & 旅行小本子一份 & \Square \\
+  \circled{14} & 信封3个,深圳地铁卡1张 & \Square \\
+  \circled{15} & 伟林报价表1份,沙沙报价表1份 & \Square \\
+\end{tabularx}
+
+\subsection{各种包包}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 旅行双肩背包1个 & \Square \\
+  \circled{2} & 相机包1个,防水腰包1个 & \Square \\
+  \circled{3} & 相机防水套1个 & \Square \\
+  \circled{4} & 可折叠备用袋子1个  & \Square \\
+  \circled{5} & 防水用袋子1个 & \Square \\
+  \circled{6} & 资料袋子1个 & \Square \\
+\end{tabularx}
+
+\subsection{衣物}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 牛仔裤1条,厚衣服1件 & \Square \\
+  \circled{2} & 长袖衬衣2件,手表1个 & \Square \\
+  \circled{3} & 外套(上衣)1件 & \Square \\
+  \circled{4} & 沙滩裤2件,内裤4条  & \Square \\
+  \circled{5} & T恤(短)5件 & \Square \\
+  \circled{6} & 泳裤2条,太阳镜1个 & \Square \\
+\end{tabularx}
+
+\subsection{洗漱吃用品}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 棉签1包, 面巾纸6包, 梳子1把 & \Square \\
+  \circled{2} & 袋装洗发水4包, 袋装沐浴露4包 & \Square \\
+  \circled{3} & 小牙膏1瓶, 毛巾1条, 牙刷1支 & \Square \\
+  \circled{4} & 旅行太空瓶子1个, 小毛巾1条 & \Square \\
+  \circled{5} & 巧克力, 零食, 糖, 米饼 & \Square \\
+\end{tabularx}
+
+\subsection{防嗮装备}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 隔离霜, 防嗮霜2瓶 & \Square \\
+  \circled{2} & 帽子1顶, 太阳墨镜1个 &  \Square \\
+  \circled{3} & 雨伞1把 & \Square \\
+\end{tabularx}
+
+\subsection{电子装备}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 手机: 电池1个, 充电器各1个 & \Square \\
+  \circled{2} & 相机：1个电池3个充电器2个 &  \Square \\
+  \circled{3} & 相机: 存储卡2张 & \Square \\
+  \circled{4} & 剃须刀1把 & \Square \\
+  \circled{5} & 全球通转换插座1个 & \Square \\
+  \circled{6} & 公牛电源转换器1个 & \Square \\
+  \circled{7} & 八爪鱼三角架1个 & \Square \\
+  \circled{8} & 擦镜头的纸5张 & \Square \\
+\end{tabularx}
+
+\subsection{药品}
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}Xr}
+  \circled{1} & 藿香正气丸1瓶, 正露丸1瓶 & \Square \\
+  \circled{2} & 感冒药冲剂4包, 防水创可贴5片 &  \Square \\
+  \circled{3} & 万金油1瓶, 风油精1瓶 & \Square \\
+  \circled{4} & 花露水1瓶 & \Square \\
+\end{tabularx}
+
+\subsection{备注}
+小本子要记下：
+\begin{tabularx}{0.24\textwidth}{l@{\hspace{5pt}}X}
+  \circled{1} & 护照号码 \\
+  \circled{2} & 自由行保单号码 \\
+  \circled{3} & 航班时间 \\
+  \circled{4} & 大使馆电话 \\
+  \circled{5} & 订酒店的网站客服电话 \\
+  \circled{6} & 酒店电话 \\
+  \circled{6} & 银联/Visa的当地联系电话 \\
+\end{tabularx}
+
+\section{休闲篇}
+待完善
+\section{购物篇}
+\subsection{乌节路}
+
+待完善
+\section{景点篇}
+\subsection{鱼尾狮}
+待完善
+\subsection{金沙酒店}
+待完善
+
+\section{交通篇}
+\subsection{公共汽车}
+\subsubsection{机场到市区}
+待完善
+\subsubsection{市区到各个景点}
+待完善
+\subsection{的士}
+待完善
+\subsection{常去地段地图}
+
+\end{multicols*}
+\end{document}

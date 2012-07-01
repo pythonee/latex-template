@@ -1,0 +1,98 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[a4paper,10pt,adobefonts]{ctexart}
+\usepackage{journal}
+
+\begin{document}
+
+\title{\bfseries{Hadoop相关研究工作}}
+\author{{王 飞}\\[8pt]
+\zihao{-5} 仅代表我个人 \\[4pt]
+}
+\date{}  % 这一行用来去掉默认的日期显示
+
+\maketitle
+\pagestyle{plain}
+\thispagestyle{empty}
+\vspace{-20pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  中文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\parbox{\textwidth}{
+%\rule{2em}{0pt}
+\bfseries{摘要：}\rm{随着计算机软硬件系统日益复杂，如何保证其正确性和可靠性成为日益紧迫的问题。
+在为此提出的诸多理论和方法中，模型检测以其简洁明了和自动化程度高而引人注目，模型检测的研究大致
+涵盖以下内容：模态/时序逻辑、模型检测算法及其时空效率（特别是空间效率）的改进以及支撑工具的研制。
+这几个方面之间有着密切的内在联系，不同模态/时序逻辑的模型检测算法的复杂性不一样，优化算法往往是
+针对某些特定类型的逻辑公式，本文将就这几个方面分别加以阐述，最后介绍该领域的新进展。}\\[5pt]
+\bfseries{关键词：}\rm{很关键；很关键；非常关键}
+\\[5pt]
+}
+\end{center}
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\zihao{4}{\textbf{Understanding counterexamples using Craig Interpolation}}\\[7pt]
+\normalsize
+Wang Fei\\[7pt]
+\zihao{-5} College of Computer Science and Technology\\
+Harbin Engineering University, Heilongjiang Harbin 150001\\[10pt]
+\end{center}
+\begin{center}
+\parbox{\textwidth}{
+\textbf{Abstract:} Model checking is an automatic technique for verifying finite-state reactive systems, such as sequential circuit designs and communication protocols. Specifications are expressed in temporal logic, and the reactive system is modeled as a state-transition graph. An efficient search procedure is used to determine whether or not the state-transition graph satisfies the specifications.
+We describe the basic model checking algorithm and show how it can be used with binary decision diagrams to verify properties of large state-transition graphs. We illustrate the power of model checking to find subtle errors by verifying part of the Contingency Guidance Requirements for the Space Shuttle.\\[4pt]
+\textbf{Keywords:} Key; Key; the Key
+}
+\end{center}
+\end{comment}
+
+\section{引言}
+
+\begin{theorem}[均值不等式]
+设$A,B$是两个实数, 则$2AB\leq A^2+B^2$.
+\end{theorem}
+
+\begin{definition}[均值不等式]
+设$A,B$是两个实数, 则$2AB\leq A^2+B^2$.
+\end{definition}
+
+支持多个队列，每个队列可配置一定的资源量，每个队列采用FIFO调度策略，为了防止同一个用户的作业
+独占队列中的资源，该调度器会对同一用户提交的作业\cite{knuth}所占资源量进行限定。调度时，首先按以下策略选
+择一个合适队列：计算每个队列中正在运行的任务数与其应该分得的计算资源之间的比值，选择一个该比
+值最小的队列；然后按以下策略选择该队列中一个作业：按照作业优先级\cite{lamport}和提交时间顺序选择，同时考虑
+用户资源量限制和内存限制
+
+\section{相关工作}
+
+\begin{algorithm}
+\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+   \State $r\gets a\bmod b$
+   \While{$r\not=0$}\Comment{We have the answer if r is 0}
+      \State $a\gets b$
+      \State $b\gets r$
+      \State $r\gets a\bmod b$
+   \EndWhile\label{euclidendwhile}
+   \State \textbf{return} $b$\Comment{The gcd is b}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  参考文献
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\small
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}  %段落之间的竖直距离
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
