@@ -1,0 +1,224 @@
+%# -*- coding:utf-8 -*-
+%% start of file `template_en.tex'.
+%% Copyright 2006-1008 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+\usepackage{fontspec,xunicode}
+
+%\setmainfont{Tahoma}
+\setmainfont{Minion Pro}
+\setsansfont{Myriad Pro}
+
+
+\usepackage[slantfont,boldfont]{xeCJK}
+\usepackage{xcolor}                 % replace by the encoding you are using
+\usepackage{pifont}
+\usepackage{tikz}
+\usepackage{microtype}
+\usepackage[firstyear=2006,lastyear=2015]{moderntimeline}
+\tlwidth{0.8ex}
+
+\setCJKmainfont{Adobe Song Std L}
+%\defaultfontfeatures{Mapping=tex-text}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+% moderncv themes
+\moderncvtheme[blue]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+%\moderncvtheme[blue,roman]{hht}
+% character encoding
+
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+\usepackage[originalcommands]{ragged2e}
+\renewcommand*{\cvcomputer}[4]{%
+  \cvdoubleitem{#1}{\small\raggedright#2}{#3}{\small\raggedright#4}}
+
+\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
+
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Fei}
+\familyname{Wang}
+\title{\upshape \normalsize Programming $\cdot$ Computing $\cdot$ Typesetting}               % optional, remove the line if not wanted
+\address{WanNing City}{Hainan Island, China}   % optional, remove the line if not wanted
+\mobile{+86 (0) 151 0984 9372}                    % optional, remove the line if not wanted
+%\phone{000-238217878}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{pythonee@gmail.com}                     % optional, remove the line if not wanted
+\homepage{{https://github.com/pythonee}{https://github.com/pythonee}} % optional, remove the line if not wanted
+\photo[64pt]{identity_00}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file;
+\extrainfo{Microsoft Certified Technology Specialist \\ C1 Certificated Driving License}
+%\quote{ {\fontfamily{lmr}\fontshape{n}\selectfont Stay foolish, stay hungry} \\ \scshape \footnotesize Steve Jobs}
+
+%\begin{tikzpicture}
+%  \node[fill=yellow,name=computing,rectangle,minimum width=0.5\textwidth,minimum height=1mm] at (0,0) {};
+%  \node[fill=green,name=open,rectangle,minimum width=0.3\textwidth,minimum height=1mm] at (4,0) {};
+%  \node[fill=blue,name=language,rectangle,minimum width=0.2\textwidth,minimum height=1mm] at (6,0) {};
+%  %\node[left color=yellow,right color=black,name=open,rectangle,minimum
+%  %width=2cm,minimum height=0.1cm] at (2,0) {};
+%  \node [red,above] at (computing.north) {\small $s\le 3$};
+%\end{tikzpicture}
+
+ \AtBeginDocument{
+    \hypersetup{
+      breaklinks,
+      baseurl       = http://,
+      pdfborder     = 0 0 0,
+      pdfpagemode   = UseNone,% do not show thumbnails or bookmarks on opening
+      pdfstartview  = FitH,
+      pdfstartpage  = 1,
+      pdfcreator    = \LaTeX{} with `moderncv' package,
+      pdfproducer   = \LaTeX{},
+      bookmarksopen = true,
+      pdfauthor     = Wang~Fei,
+      pdftitle      = Resume of Fei Wang,
+      pdfsubject    = Wang~Fei,
+      pdfkeywords   = Wang~Fei{} Resume{} }}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{Education}
+\tllabelcventry{2006}{2010}{2006-2010}{Wuhan University,
+China}{}{}{}{Degree: Bachelor of Engineering in Software Engineering \newline Thesis:
+''Personalization Recommend Module for Enterprise Service'' \newline Advisor:
+Prof. Jianguang Tu}
+
+\tllabelcventry{2010}{2011}{2010-2011}{Dublin City University, Ireland}
+{}{}{}{Degree: Master of Engineering in Telecommunications Engineering \newline
+Thesis: ''Congestion Control Mechanisms for OBS Networks'' \newline Advisor:
+Dr. Conor McArdle \newline Grade: Second Class Honour}
+
+\section{Skills}
+\subsection{Development}
+\cvcomputer{Language}{Writing clean code in Python, Java, C/C++, Haskell, with
+practical experiences}{Back-End}{ Backend Development with MVC architecture
+framework, such as Web.py+Sqlalchemy+Mako, Spring+Hibernate+Struts}
+
+\cvcomputer{DataBase}{Good knowledge of relational database, especially for
+mysql and postgresql}{Front-End}{ Frontend Development with Javascript, Css.
+Write browser compatible Html with Jquery framework and Bootstrap}
+
+\cvcomputer{Cloud Dev}{Build web app on Google App Engine cloud platform and
+using google Datastore}{Syntax}{Lexical analysis and parsing with Flex Bison Antlr}
+
+\cvcomputer{Simulation}{Discrete Event Simulation with NS-2 and
+Opnet}{Method}{Object-Oriented, UML, Unit Test}
+
+\subsection{Office and Tools}
+\cvcomputer{Document}{Write official report with \LaTeX, Sphinx, Asciidoc,
+Reportlab, Pandoc}{Plot}{Data visualisation with Graphviz, Gnuplot, Tikz, Matplotlib}
+
+\cvcomputer{Version}{source code manage: Svn, Git SourceSafe}{Editor}{Vim,
+Eclipse, Visual Studio}
+
+\cvline{Productivity}{Xmind, GTD}
+
+\subsection{General skills}
+\cvline{}{Excellent quick learning and problem solving ability under time
+constraints}
+
+\cvline{}{Critical thinking and effective communication}
+
+\cvline{}{Skilling at using google and stackexchange tool chain}
+
+%\cvcomputer{Language}{Java, Python, C, Javascript, Haskell}{Web}{Http, Html, Css, Jquery, Ajax}
+%\cvcomputer{Databases}{Mysql, PostgreSQL, Datastore}{Tools}{Vim, Xmind, Shell/Bash, NUnit}
+%\cvcomputer{Simulation}{NS-2, Opnet, DES}{Source}{Svn, Git, SourceSafe}
+%\cvcomputer{Analytics}{Matlab, Excel, Mathematica, R}{Syntax}{Flex, Bison, Antlr}
+%\cvcomputer{Platform}{GNU/Linux(Arch linux, Ubuntu), Windows}{Framework}{Google App Engine, Spring, Hibernate, Struts, Mako}
+
+\section{Experience}
+\subsection{Pratice Experience}
+\cventry{Summer of
+2009}{DaLian Neusoft training}{Embedded greedy snake game, win \bfseries{the
+best project} \normalfont{award}}{To be the major developer}{responsible for
+the driver of LCD1602, wrap the developer-friendly api for high layer}{
+\begin{tabular}{l@{: }lp{3cm}l@{: }l}
+  Hardware& LPC2124 cpu + LCD1602 & & Operate System&uc-OS \\
+  Module& Driver of LCD1602 & & Submit code&1000+ lines \\
+  \end{tabular}
+}
+\cventry{Summer of
+2010}{ShenZhen Broadengate training}{Platform of commodity service, be
+selected for \bfseries{the best project }}{To be the major developer}{Maintain
+code repository with svn, build the whold project skeleton, responsible for
+group-wide training of J2EE development and tackle the key problem of
+personalization recommend engine}{
+\begin{tabular}{l@{: }lp{1.6cm}l@{: }l}
+  Platform& J2EE & & Frameworks & Spring+Hibernate+Struts \\
+  Module& \parbox[t]{5.2cm}{Personalization recommend engine based on Mahout} & & Submit code & 2000+ lines \\
+  \end{tabular}
+}
+\cventry{Winter of 2011}{GmusicIreland
+Entertainment Internship}{PHP video website}{Major developer}{}{responsible
+for website building and content updating, include video cutting and merge}
+
+\subsection{Personal Project Experience}
+\tllabelcventry{2011}{2012}{2011.10}{A blog system hold by google app
+engine}{}{}{}{Develop with python, using the light-weight WSGI framework YUI.
+Mako as template engine. Included some major feature: post/update/delete
+article, send weather forcast to mobile phone, LaTeX forum render}
+
+\tllabelcventry{2011}{2012}{2011.05}{IEEE802.11 simulation with NS-2}{}{}{}{
+Measure the performance of Qos application under the IEEE802.11 protocol
+network with NS-2. Write the TCL script simulation and awk script to do data
+visualization. Analysis with queuing theory}
+
+\tllabelcventry{2008}{2010}{2008-2010}{
+Emerangel CMS system}{}{}{}{Build the CMS system based on some existed open
+source project, such as wordpress, joomla, media wiki. customize the page
+style of them. let them look consistent. Integrate the user Authentication
+with ucenter}
+
+\section{Language}
+\cvline{Chinese}{Mother tongue}
+\cvline{English}{CET-4, EPTIP IT , Fluent}
+%\cvline{驾照}{准驾类型 C1}
+%\cvline{时间管理}{番茄工作法}
+
+%\section{活动经历}
+\section{Interest and Activities}
+\tllabelcventry{2008}{2009}{2008-2010}{Emerangel first-aid knowledge spread
+non-profit organization}{}{act as the minister of network department}{}{I
+build a one-stop content manage site. It include a news publication website, a
+wiki knowledge management, a forum for online discussion, a office suit for
+internal communication. It really works well. Be in this period, I also
+served as volunteer of Hubei Emerangency Center}
+
+%\section{获奖情况}
+%\cvline{2008}{武汉大学优秀班级干部}
+%\cvline{2009}{武汉大学优秀青年志愿者}
+%\cvline{2009}{武汉大学百度程序设计大赛前三轮}
+
+%\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+%\renewcommand{\listitemsymbol}{\ding{43}} % change the symbol for lists
+
+%\section{个人兴趣}
+%\cvline{字体}{DTP系统, 古籍排版, 活字字模, 瘦金体}
+%\cvline{运动}{羽毛球, 篮球}
+%\cvline{Maillist}{Toplanguage, CPyUG, Social Learn Lab}
+%\cvline{板载系统}{Raspberry Pi, Arduino, DreamPlug}
+
+
+\end{document}
+
+
+%% end of file `template_en.tex'.

@@ -1,0 +1,219 @@
+%# -*- coding:utf-8 -*-
+%% start of file `template_en.tex'.
+%% Copyright 2006-1008 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}
+
+\usepackage{fontspec,xunicode}
+
+\setmainfont{Tahoma}
+
+\usepackage[slantfont,boldfont]{xeCJK}
+\usepackage{xcolor}                 % replace by the encoding you are using
+\usepackage{pifont}
+\usepackage{tikz}
+\usepackage{microtype}
+\usepackage[firstyear=2006,lastyear=2015]{moderntimeline}
+\tlwidth{0.8ex}
+
+\setCJKmainfont{Adobe Song Std L}
+%\defaultfontfeatures{Mapping=tex-text}
+%\XeTeXlinebreaklocale "zh"
+%\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+% moderncv themes
+\moderncvtheme[blue]{classic}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+%\moderncvtheme[blue,roman]{hht}
+% character encoding
+
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+
+\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+\renewcommand*\httplink[2][]{{\urlstyle{sf}\expandafter\href#2}}
+
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{王}
+\familyname{飞}
+\title{\upshape \normalsize Programming $\cdot$ Computing $\cdot$ Typesetting}               % optional, remove the line if not wanted
+\address{海南省万宁市}{兴隆华侨农场}    % optional, remove the line if not wanted
+%\address{}{1987\,$\cdot$\,05\,$\cdot$\,21}
+\mobile{15109849372}                    % optional, remove the line if not wanted
+%\phone{000-238217878}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{pythonee@gmail.com}                     % optional, remove the line if not wanted
+\homepage{{https://github.com/pythonee}{https://github.com/pythonee}} % optional, remove the line if not wanted
+\photo[64pt]{identity_00}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file;
+%\quote{ {\fontfamily{lmr}\fontshape{n}\selectfont Stay foolish, stay hungry} \\ \scshape \footnotesize Steve Jobs}
+
+%\begin{tikzpicture}
+%  \node[fill=yellow,name=computing,rectangle,minimum width=0.5\textwidth,minimum height=1mm] at (0,0) {};
+%  \node[fill=green,name=open,rectangle,minimum width=0.3\textwidth,minimum height=1mm] at (4,0) {};
+%  \node[fill=blue,name=language,rectangle,minimum width=0.2\textwidth,minimum height=1mm] at (6,0) {};
+%  %\node[left color=yellow,right color=black,name=open,rectangle,minimum
+%  %width=2cm,minimum height=0.1cm] at (2,0) {};
+%  \node [red,above] at (computing.north) {\small $s\le 3$};
+%\end{tikzpicture}
+
+ \AtBeginDocument{
+    \hypersetup{
+      breaklinks,
+      baseurl       = http://,
+      pdfborder     = 0 0 0,
+      pdfpagemode   = UseNone,% do not show thumbnails or bookmarks on opening
+      pdfstartview  = FitH,
+      pdfstartpage  = 1,
+      pdfcreator    = \LaTeX{} with `moderncv' package,
+      pdfproducer   = \LaTeX{},
+      bookmarksopen = true,
+      pdfauthor     = Wang~Fei,
+      pdftitle      = Resume of Fei Wang,
+      pdfsubject    = Wang~Fei,
+      pdfkeywords   = Wang~Fei{} Resume{} }}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{教育背景}
+\tllabelcventry{2006}{2010}{2006-2010}{中国武汉大学软件工程学士}{}{}{}{毕业论文:电子商务平台中的推荐引擎}
+\tllabelcventry{2010}{2011}{2010-2011}{爱尔兰都柏林城市大学通信工程硕士}{}{}{}{毕业论文:光突发交换网络中的拥塞控制}
+
+\section{主修课程}
+\cvline{本科阶段}{C++程序设计、计算机组织与体系结构、面向对象程序设计、编译技术及应用、操作系统原理、数据结构与算法、数据库系统、UNIX程序设计、高等数学、线性代数、离散数学}
+
+\cvline{研究生阶段}{Data Network Protocol Analysis \& Simulation、Network
+Programming、Performance of Data Networks、Broadband Networks、Internetwork
+Security、Object Oriented Programming For Engineer、Server-Side
+Development、HDL and High-Level Logic Synthesis}
+
+
+\section{专业技能}
+\cvline{网站建设}{精通动态网页的设计、编码、优化,使用python/java/asp.net进行服务器端编程,熟悉常用MVC框架,如Spring/Hibernate/Struts/Mako/Google
+App Engine, 熟悉Memcached, 熟悉Jquery框架, 能使用Ajax编写用户友好的界面}
+\cvline{网络模拟}{深刻理解基于离散事件模拟理论和利用排队论进行模拟分析,
+熟悉NS-2和Opnet等网络模拟软件}
+\cvline{数据处理}{使用Matlab/R对大数据集进行样本分析、挖掘,
+并使用Gnuplot/Matplotlib进行数据可视化,生成报表}
+\cvline{办公自动化}{使用Word/Scribus/\LaTeX 等高质量的桌面出版系统,
+配合Graphviz/Tikz等矢量作图软件, 进行办公文案模板制作、办公资料电子化等,
+编写VBA script进行Microsoft office套件协合办公自动化}
+\cvline{数据库建模}{熟悉Mysql/PostgreSQL关系型数据库,依据需求进行关系型建模,
+编写SQL数据查询计划}
+%\cvline{系统安装}{}
+
+\section{专业认证}
+\tllabelcventry{2008}{2009}{2008.10}{微软技术专家认证}{}{}{}{Microsoft .Net Framework
+2.0~-~基于Web的客户端开发-C\#}
+
+%\cvcomputer{Language}{Java, Python, C, Javascript, Haskell}{Web}{Http, Html, Css, Jquery, Ajax}
+%\cvcomputer{Document}{\LaTeX, Sphinx, Asciidoc, Reportlab}{Plot}{Graphviz, Gnuplot, Tikz, Matplotlib}
+%\cvcomputer{Databases}{Mysql, PostgreSQL, Datastore}{Tools}{Vim, Xmind, Shell/Bash, NUnit}
+%\cvcomputer{Simulation}{NS-2, Opnet, DES}{Source}{Svn, Git, SourceSafe}
+%\cvcomputer{Analytics}{Matlab, Excel, Mathematica, R}{Syntax}{Flex, Bison, Antlr}
+%\cvcomputer{Platform}{GNU/Linux(Arch linux, Ubuntu), Windows}{Framework}{Google App Engine, Spring, Hibernate, Struts, Mako}
+
+\section{项目经验}
+\tllabelcventry{2011}{2012}{2011.10}{使用Google app
+engine建立个人信息中心}{}{}{}{主要开发语言为Python，使用轻量级WSGI框架YUI，模
+板系统Mako，独立完成本人wikipad的DataModel设计，前台页面设计，Admin后台管理，
+发送当日天气预报等功能。代码量3000+}
+
+
+\tllabelcventry{2011}{2012}{2011.05}{使用Ns-2模拟多媒体应用在
+IEEE802.11网络的行为}{}{}{}{主要模拟需要Qos的多媒体应用在IEEE802.11协议下的丢
+包率、延迟、吞吐量等性能参数,编写Tcl脚本仿真、编写awk脚本获取数据、使用排队论
+分析实验与理论差异}
+
+%\tldatelabelcventry{2010}{2010.03}{学生注册选课系统}{}{}{}{利用JSP技术构建的服务，是一个功能完善的网站，具有学生注册、学生认证、针对不同的学习计划选择不同的课程}
+
+%\tldatelabelcventry{2007}{2007.05}{基于asp.net构建个人博客网站}{}{}{}{个人博客网站，使用.net平台C\#语言开发，MVC架构，不使用框架，自定义控件逻辑}
+
+\tllabelcventry{2008}{2010}{2008-2010}{
+救护之翼组织网络信息平台搭建}{}{}{}{使用开源软件Joomla，Wordpress，Mediawiki进
+行二次开发，完成团队对外网络信息平台，修改代码涉及统一用户认证，前台美化，推广
+使用wiki组织知识}
+
+\section{培训经验}
+\cventry{Summer of
+2009}{大连东软实训}{嵌入式贪食蛇,\bfseries{获最佳项目奖}}{担任开发人员}{完成LCD1602驱动部分,并封装成api}{
+  \begin{tabular}{p{0.5\textwidth}r@{: }l}
+  硬件: LPC2124 cpu + LCD1602 & 操作系统&uc-OS \\
+  模块: LCD1602的驱动模块 & 提交代码量&1000+行 \\
+  \end{tabular}
+}
+\cventry{Summer of
+2010}{深圳易思博实训}{电子商务平台,\bfseries{入围最佳项目奖}}{担任技术经理}{负责维护代码库,建立整个项目骨架,负责J2EE开发的全组培训和个性化推荐技术攻关}{
+  \begin{tabular}{p{0.5\textwidth}r@{: }l}
+  平台: J2EE平台 & 框架 & Spring+Hibernate+Struts \\
+  模块: 基于Mahout实现个性化推荐 & 提交代码量 & 2000+行 \\
+  \end{tabular}
+}
+
+\section{工作经验}
+\cventry{Winter of 2011}{GmusicIreland
+Entertainment}{视频网站}{担任开发人员}{}{搭建公司视频网站, 担任开发人员. 负责视频编辑, php后台开发, 页面设计}
+
+\section{其他能力}
+\cvline{英语}{英语四级,EPTIP IT职业英语}
+\cvline{驾照}{准驾类型 C1}
+%\cvline{时间管理}{番茄工作法}
+
+%\section{活动经历}
+\section{社会实践}
+\tllabelcventry{2008}{2009}{2008-2010}{湖北省武汉市救护之翼组织}{}{担任网络部部长}{}{搭建整个团队的网络信息平台,负责新闻公告,
+Wiki知识汇编,Forum的维护等相关工作,
+期间也曾参与湖北急救中心相关培训工作,担任志愿者}
+
+%\section{获奖情况}
+%\cvline{2008}{武汉大学优秀班级干部}
+%\cvline{2009}{武汉大学优秀青年志愿者}
+%\cvline{2009}{武汉大学百度程序设计大赛前三轮}
+
+%\renewcommand{\listitemsymbol}{-} % change the symbol for lists
+%\renewcommand{\listitemsymbol}{\ding{43}} % change the symbol for lists
+
+%\section{个人兴趣}
+%\cvline{字体}{DTP系统, 古籍排版, 活字字模, 瘦金体}
+%\cvline{运动}{羽毛球, 篮球}
+%\cvline{Maillist}{Toplanguage, CPyUG, Social Learn Lab}
+%\cvline{板载系统}{Raspberry Pi, Arduino, DreamPlug}
+
+\section{自我评价}
+\cvline{}{专业方面，本科专业是软件工程,
+研究生专业是通信工程，参加过两次大型项目开发经验，这不仅使我系统地掌握了软件设
+计、开发及维护等相关专业知识，还让我学会了如何快速进入新领域，如何参与大型软件
+开发项目。自学能力较强，在修完C++、Java编程语言后，自学Python面向对象编程和
+Lisp/Haskell函数式编程。业余时间独立完成多个有趣的项目，如GAE建站、JSP、
+applet/servlet、信息加密、LaTeX排版等，追求精益求精，有嵌入式相关实习和VHDL编
+程经验。\newline 另外，有较好的时间观念，很强的事业心和责任感使我能够
+面对困难和挑战。同时将近2年的国外生活，除了吸取专业知识外，还让我能够进行日常
+口语交流，无障碍阅读、编辑英文文档，有较强的适应能力。}
+
+
+%% Publications from a BibTeX file
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}       % 'publications' is the name of a BibTeX file
+
+%\begin{thebibliography}{99}
+%\bibitem{11} LaTeX入门与提高,高等教育出版社。
+%\end{thebibliography}
+
+\end{document}
+
+
+%% end of file `template_en.tex'.
