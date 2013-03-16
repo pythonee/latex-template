@@ -53,30 +53,30 @@
 \usepackage{etoolbox}
 % 解决目录重叠的问题
 \usepackage{titletoc}
-\titlecontents{chapter}[0pt]{\vspace{.1\baselineskip}\bfseries}
+\titlecontents{chapter}[0pt]{\vspace{.1\baselineskip}\large\bfseries}
     {\thecontentslabel\hspace{2.8mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{section}[1.75em]{\vspace{-0.10mm}}
+\titlecontents{section}[1.75em]{\vspace{-0.10mm}\bfseries}
     {\thecontentslabel\hspace{4mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[4.2em]{\vspace{-0.20mm}}
+\titlecontents{subsection}[4.2em]{\vspace{-0.20mm}\bfseries}
     {\thecontentslabel\hspace{4mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[7.3em]{\vspace{-0.20mm}}
+\titlecontents{subsubsection}[7.3em]{\vspace{-0.20mm}\bfseries}
     {\thecontentslabel\hspace{4mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{part}[0pt]{\addvspace{3pc}}
-{\bfseries\thecontentslabel\\*[.2pc]\large}
-{\bfseries\large}{}[\addvspace{.5pc}]
 
-\titlecontents{figure}[0pt]{\vspace{.1\baselineskip}\bfseries}
+\titlecontents{part}[0pt]{\addvspace{3pc}}
+    {\bfseries\thecontentslabel\\*[.2pc]\large}
+    {\bfseries\LARGE}{}[\addvspace{.5pc}]
+
+\titlecontents{figure}[0pt]{\vspace{.1\baselineskip}\large\bfseries}
     {图\thecontentslabel\hspace{2.8mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
     
-\titlecontents{table}[0pt]{\vspace{.1\baselineskip}\bfseries}
+\titlecontents{table}[0pt]{\vspace{.1\baselineskip}\large\bfseries}
     {表\thecontentslabel\hspace{2.8mm}}{}
     {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
-
 
 %定制页眉和页脚，并设定使用该包的页面风格
 \usepackage{fancyhdr}
