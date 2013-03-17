@@ -13,6 +13,15 @@
 \renewcommand{\lstlistlistingname}{代码}
 \renewcommand{\lstlistingname}{代码}
 
+% ====================
+% 设置listing目录样式
+% ====================
+\contentsuse{lstlisting}{lol}
+\titlecontents{lstlisting}[0pt]{\vspace{.1\baselineskip}\bfseries\large}
+              {code \thecontentslabel\hspace{2.8mm}}{}
+    		   {\hspace{.5em}\titlerule*[5pt]{$\cdot$}\contentspage}
+              []
+
 \usepackage{xcolor} % 颜色增强
 \definecolor{lightgrey}{HTML}{D0CFCF}% 亮灰色
 \definecolor{lightblue}{HTML}{D5EDF1}% 亮蓝色
@@ -50,23 +59,23 @@ font={bf,footnotesize}
          extendedchars=true,         %
          breaklines=true,            % Zeilen werden Umgebrochen
          mathescape,
-         escapeinside={\%*}{*)},        % if you want to add a comment within your code
+         escapeinside={\%*}{*)},     % if you want to add a comment within your code
          showspaces=false,           % Leerzeichen anzeigen ?
          showtabs=false,             % Tabs anzeigen ?
-         showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
+         showstringspaces=false,     % Leerzeichen in Strings anzeigen ?
          columns=flexible,
          framextopmargin= 10pt,
          framexbottommargin=10pt,
          width=\textwidth-\fboxsep-\fboxrule,
          keywordstyle=\color{greyblue},      % keyword style
-         commentstyle=\color{greygreen},  % comment style
+         commentstyle=\color{greygreen},     % comment style
          stringstyle=\color{mauve}\ttfamily, % Farbe der String
          float=tp                            % float setting
 }
 
 \lstdefinestyle{proBookStyle}{%
          keywordstyle=\color{greyblue},      % keyword style
-         commentstyle=\color{greygreen},  % comment style
+         commentstyle=\color{greygreen},     % comment style
          stringstyle=\color{mauve}\ttfamily, % Farbe der String
          frame=single,
          rulecolor= \color{gray},
@@ -101,7 +110,7 @@ font={bf,footnotesize}
 
 \lstdefinestyle{cleanStyle}{%
      keywordstyle=\color{greyblue},      % keyword style
-     commentstyle=\color{greygreen},  % comment style
+     commentstyle=\color{greygreen},     % comment style
      stringstyle=\color{mauve}\ttfamily, % Farbe der String
      identifierstyle=\color{magenta},
      rulecolor= \color{gray},
