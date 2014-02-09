@@ -1,0 +1,95 @@
+\documentclass[a4paper,10pt,twocolumn,final,]{article}
+%\documentclass[a4paper,10pt,twocolumn,draft]{article}
+
+\include{setting}
+
+\pagestyle{fancy}
+\fancyhead{}%
+\fancyhead[LO,LE]{english paper title \date (\today} % \quad \today
+\fancyhead[RO,RE]{\date{\today}}%\date{\today}
+
+
+\begin{CJK*}{GBK}{song}
+
+\begin{document}
+\title{\textbf{中文标题}}
+\date{\today}
+
+
+\author{
+姓名\\
+\textit{学校名称}\\
+Email:\texttt{xxx@xxx.edu.cn}
+ \and
+FirstName LastName\\
+\textit{XXX Engineering University}\\
+Email:\texttt{xxx@xxx.edu.cn}}%
+
+
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\maketitle
+\begin{abstract}
+中文摘要 bla bla bla ...，该文档编译方式，\LaTeX{} $\rightarrow$ dvips $\rightarrow$ pspdf 或者 \LaTeX{} $\rightarrow$ dvipdf
+\\
+\textbf{关键字：} \textbf{关键字1，关键字2，关键字3，关键字4}\\
+\begin{center}
+\large{\textbf{english title}}
+\end{center}
+This is the English abstract\\
+\textbf{Keywords:} \textbf{Keywords1, Keywords2, Keywords3, Keywords4}
+
+\end{abstract}
+\end{@twocolumnfalse}
+] \makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{简介}
+
+\section{一级标题}
+\subsection{二级标题}
+
+\subsubsection{三级标题}
+
+\begin{eqnarray}\label{ev_temp}
+equ1
+\end{eqnarray}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[scale=0.3]{imgs/sample.eps}
+%\includegraphics[scale=0.5]{imgs/partialupdategreedcomp.eps}
+\caption{图的标题}\label{f_temp}
+\end{center}
+\end{figure}
+
+\section{结论}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\balance{
+
+\begin{footnotesize}
+\begin{thebibliography}{30}
+\bibitem{J_lab1} Auth1. Auth2, ``Title of paper”, {\it Journal name}, vol. *, no. *, pp. **-**, 20**.
+
+\bibitem{J_lab2} 作者1. 作者1, ``论文标题”, {\it 杂志名称}, vol. *, no. *, pp. **-**, 20**.
+\end{thebibliography}
+\end{footnotesize}
+\end{CJK*}
+\end{document}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% modified on :
+
+% modified on : 星期日, 三月 21, 2010  07:40
+% the first one.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
